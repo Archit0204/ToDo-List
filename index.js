@@ -12,11 +12,14 @@ clrButton.addEventListener('click', () => {
 
 addButton.addEventListener('click', () => {
 
-    const newTask = document.createElement("li");
-
-    if (input.value === "")
-        alert("Enter a Task first");
+    if (input.value === "") {
+        input.placeholder = "Enter a Task first !!!";
+        setTimeout(() => {
+            input.placeholder = "What do you want to do?";
+        }, 2000);
+    }
     else {
+        const newTask = document.createElement("li");
         newTask.innerText = input.value;
         display.appendChild(newTask);
         input.value = "";
